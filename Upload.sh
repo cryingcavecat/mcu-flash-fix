@@ -20,7 +20,7 @@ for sysdevpath in $paths; do
         [[ -z "$espPort" ]] && exit
 
         echo "ESP found at " "$espPort"
-        ((count++))
+        (( count++ ))
         if [[ $count -gt 1 ]]
         then
             echo "More than one ESP32 found. Is a Stand plugged in?"
@@ -28,6 +28,7 @@ for sysdevpath in $paths; do
         fi
     )
 done 
+echo "Done"
 
 for sysdevpath in $paths; do
     (
@@ -44,7 +45,8 @@ for sysdevpath in $paths; do
         espPort=$(echo "$device" | grep "1a86_USB_Single_Serial" | cut -d " " -f1)
         [[ -z "$espPort" ]] && exit
 
-        echo "ESP found at " "$espPort"
+        echo "d found at " "$espPort"
         
     )
 done 
+echo "Done 2"
