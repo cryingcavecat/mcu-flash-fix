@@ -1,7 +1,6 @@
 #!/bin/bash
 
-declare -i count
-shopt -s lastpipe # enable lastpipe
+set -e
 
 paths=$(find /sys/bus/usb/devices/usb*/ -name dev)
 
@@ -22,8 +21,10 @@ for sysdevpath in $paths; do
 
         echo "ESP found at " "$espPort"
         ((count++))
-        echo "$count"
+        if [[ $count -gt 1 ]]
+        then
+            echo "More than one ESP32 found. Is a Stand plugged in?"
+            exit 1
+        fi
     )
 done 
-shopt -u lastpipe # disable lastpipe
-echo "count is " "$count"
