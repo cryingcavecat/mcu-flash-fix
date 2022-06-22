@@ -24,6 +24,6 @@ for sysdevpath in $paths; do
         ((count++))
         echo "$count"
     )
-done < < ()
+done 
 shopt -u lastpipe # disable lastpipe
 echo "count is " "$count"
