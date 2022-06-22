@@ -2,7 +2,7 @@
 repo="https://github.com/cryingcavecat/mcu-flash-fix.git"
 repo_name="mcu-flash-fix/"
 
-
+pip3 install esptool
 
 cd /home/eden/
 
